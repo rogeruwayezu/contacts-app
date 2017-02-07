@@ -1,4 +1,6 @@
 class Contact < ApplicationRecord
+  has_many :group_contacts
+  has_many :groups, through: :group_contacts
   def friendly_created_at
     created_at.strftime("%B %e, %Y")
   end
@@ -8,5 +10,6 @@ class Contact < ApplicationRecord
   def prefix
     "+ 81 #{phone_number}"
   end
+
   
 end

@@ -3,5 +3,8 @@
 <h1>Email: <%= @contact.email %></h1>
 <h1>Phone number: <%= @contact.prefix%></h1>
 <h1>Created at: <%= @contact.friendly_created_at %></h1>
+<h1>Group:<% @contact.groups.each do |group| %></h1>
+  <%= group.name %>
+<% end %>
 <%= button_to "Edit", "/contacts/#{@contact.id}/edit", method: :get %>
 <%= button_to "Delete", "/contacts/#{@contact.id}", method: :delete %>
